@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GantiO" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0c9639e4-ff32-4628-9dee-6c944672b359">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="DbBkl"/>
+    <parameter name="PrintedBy" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Di Print Oleh Jack 01/01/2015 12:00"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="KMO" class="java.lang.Float">
+        <defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+    </parameter>
+    <parameter name="Title" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Laporan Mobil Perlu Ganti Oli"]]></defaultValueExpression>
+    </parameter>
+    <queryString>
+		<![CDATA[SELECT
+     ttruck.`KdTruck` AS ttruck_KdTruck,
+     ttruck.`KMO` AS ttruck_KMO,
+     ttruck.`NoPolisi` AS ttruck_NoPolisi
+FROM
+     `ttruck` ttruck where ttruck.`Stat`=1 and ttruck.`KMO` >= $P{KMO}]]>
+    </queryString>
+    <field name="ttruck_KdTruck" class="java.lang.Integer"/>
+    <field name="ttruck_KMO" class="java.math.BigDecimal"/>
+    <field name="ttruck_NoPolisi" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <pageHeader>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="572" height="20" uuid="4ef8b150-b8d6-49dc-b82d-8f8365add08c"/>
+                <box leftPadding="5" rightPadding="5"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Verdana" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{Title}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="20" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="42" height="20" uuid="de0113b7-e32f-4312-b31f-72ca3b4dea05"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <text><![CDATA[No]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="227" y="0" width="185" height="20" uuid="58fa9a25-6906-4763-b486-eac6aa769355"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <text><![CDATA[Kilometer Ganti Oli]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="42" y="0" width="185" height="20" uuid="d953583a-e325-4675-9cc6-0220c5b9ac1b"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <text><![CDATA[No Plat]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+                <reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="42" height="20" isPrintWhenDetailOverflows="true" uuid="2159a27e-0d1b-4030-b83a-e9ee0c42f238"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+                <reportElement stretchType="RelativeToBandHeight" x="227" y="0" width="185" height="20" isPrintWhenDetailOverflows="true" uuid="d9490736-7394-4a8a-9b7e-bb938cea62cc"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{ttruck_KMO}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+                <reportElement stretchType="RelativeToBandHeight" x="42" y="0" width="185" height="20" isPrintWhenDetailOverflows="true" uuid="50ffde44-1487-46ba-a540-46ea82a691f3"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{ttruck_NoPolisi}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <staticText>
+                <reportElement x="487" y="0" width="20" height="20" uuid="38e2a586-aff0-4404-b88e-bdd335a8ec1d"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[Dari]]></text>
+            </staticText>
+            <textField evaluationTime="Report">
+                <reportElement x="507" y="0" width="65" height="20" uuid="527859c7-aa63-4836-91a3-8056ccb2e381"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="447" y="0" width="40" height="20" uuid="0b0cd8a9-033a-4b8b-b1de-a801420ca530"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="427" y="0" width="20" height="20" uuid="1a98ca4d-90a8-48fb-a517-afcfae036c15"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[Hal]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="0" y="0" width="427" height="20" uuid="797ef09b-6fcf-46e8-8110-03fd79b7bd0a"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="0.0"/>
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                    <bottomPen lineWidth="0.0"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{PrintedBy}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>

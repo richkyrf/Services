@@ -1,0 +1,42 @@
+                                                                                
+                             SURAT PERMINTAAN BARANG                            
+                                                                                
+                                                                                
+   No Permintaan Barang :00009-15-PB                                            
+   No SPK               :00007-15-SPK                                           
+   Tanggal              :11/04/2015 12:09                                       
+   Sopir/Mekanik        :SPIR                                                   
+                                                                                
+   No  Jenis Permintaan   Keterangan                        Jumlah   Satuan     
+   1   Tangki             kasdasd                                   1unit       
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+      Di keluarkan oleh       Di Ketahui oleh           Di Ajukan oleh          
+                                                                                
+                                                                                
+                                                                                
+            USER                 SUGIARTO                    SPIR               
+       KA.Operasional           KA.Mekanik              Mekanik / Sopir         
+         13/04/2015           Tgl:___/___/___           Tgl:___/___/___         
+   Di Print Oleh USER Pada 13/04/2015 09:30                                     
+                                                                                
+                                                                                
+
+

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MasterJenisService" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb471d33-f145-4c9c-a6a3-a2f7ae641cc4">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <parameter name="Title" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Laporan Permintaan Barang"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="PrintedBy" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Di Print Oleh Jack 01/01/2015 12:00"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="Where" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Order by 1 DESC"]]></defaultValueExpression>
+    </parameter>
+    <queryString>
+		<![CDATA[SELECT `No`, `Jenis Service`, `Keterangan`  FROM `tjenisservice` $P!{Where}]]>
+    </queryString>
+    <field name="No" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="Jenis Service" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="Keterangan" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <pageHeader>
+        <band height="30" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="572" height="30" uuid="ea3e880c-55e2-4b9f-a526-95b30fb3f162"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Verdana" size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{Title}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="20" splitType="Stretch">
+            <staticText>
+                <reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="50" height="20" isPrintWhenDetailOverflows="true" uuid="aafc2dd5-7916-4969-a850-6131c1bead5c"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <text><![CDATA[No]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToBandHeight" x="50" y="0" width="208" height="20" isPrintWhenDetailOverflows="true" uuid="228fc77b-b4be-4fd3-a878-2de55f48310d"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <text><![CDATA[Jenis Service]]></text>
+            </staticText>
+            <staticText>
+                <reportElement stretchType="RelativeToBandHeight" x="258" y="0" width="314" height="20" isPrintWhenDetailOverflows="true" uuid="d5465cb0-60b9-4714-bc92-ce49b0e5ff6d"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <text><![CDATA[Keterangan]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <elementGroup>
+                <textField isStretchWithOverflow="true">
+                    <reportElement stretchType="RelativeToBandHeight" x="50" y="0" width="208" height="20" isPrintWhenDetailOverflows="true" uuid="5acb952f-26cb-4044-9f7b-890d2437d53f"/>
+                    <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                        <pen lineWidth="1.0"/>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textFieldExpression><![CDATA[$F{Jenis Service}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement stretchType="RelativeToBandHeight" x="258" y="0" width="314" height="20" isPrintWhenDetailOverflows="true" uuid="ba323848-4af1-4767-9386-4e8ede267742"/>
+                    <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                        <pen lineWidth="1.0"/>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textFieldExpression><![CDATA[$F{Keterangan}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="50" height="20" isPrintWhenDetailOverflows="true" uuid="c4010fae-de63-411f-aadb-85170deeeb1b"/>
+                    <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                        <pen lineWidth="1.0"/>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+                </textField>
+            </elementGroup>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="572" height="20" uuid="2cf44423-5d21-4ca0-a74e-a71556e79726"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5"/>
+                <textElement>
+                    <font fontName="Verdana" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PrintedBy}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>

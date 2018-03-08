@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LKMTruckTrip" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a8ea1ed7-c91e-43ec-8fc0-77d2c13d8fe4">
+    <property name="ireport.zoom" value="1.0245201830476058"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <parameter name="Title" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Laporan Permintaan Barang"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="Title2" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Periode 01/01/2014 Hingga 01-01-2016"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="PrintedBy" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Di Print Oleh Jack 01/01/2015 12:00"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="Where" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+    </parameter>
+    <queryString>
+		<![CDATA[SELECT `NoPolisi`,sum(1) as 'Trip' , sum(`Jarak`) as 'KM' FROM `tdistribusidanrealisasido` $P!{Where}]]>
+    </queryString>
+    <field name="NoPolisi" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="Trip" class="java.math.BigDecimal"/>
+    <field name="KM" class="java.lang.Double"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <pageHeader>
+        <band height="40" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="20" width="572" height="20" uuid="db6e92c2-cb39-48a4-90cb-b463ef9dad24"/>
+                <box leftPadding="5" rightPadding="5"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{Title2}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="0" width="572" height="20" uuid="eebe65b3-7053-409f-9bc0-2edabf8e8f4f"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{Title}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="20" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="87" height="20" uuid="acb0b3ad-7dff-4e0b-8b27-e44338dea688"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[NoPolisi]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="87" y="0" width="113" height="20" uuid="16473c63-46ac-4730-95cf-a4d4330efbe0"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[Trip]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="200" y="0" width="110" height="20" uuid="ba26164c-f01e-4455-a8a7-29f3ccc10eef"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <text><![CDATA[KM]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <textField isStretchWithOverflow="true">
+                <reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="87" height="20" isPrintWhenDetailOverflows="true" uuid="a0e5a7b8-9b5c-493c-802f-dd600f4c3493"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{NoPolisi}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true" pattern="#,##0;-#,##0">
+                <reportElement stretchType="RelativeToBandHeight" x="87" y="0" width="113" height="20" isPrintWhenDetailOverflows="true" uuid="f18e1f7f-d905-493a-8896-6d39d9f11ae8"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{Trip}]]></textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true" pattern="#,##0;-#,##0">
+                <reportElement stretchType="RelativeToBandHeight" x="200" y="0" width="110" height="20" isPrintWhenDetailOverflows="true" uuid="c3cf9242-c06f-47b0-b5a2-c42402d1d949"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{KM}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="427" height="20" uuid="68a65045-80da-450b-a3f0-82826a02cee6"/>
+                <box leftPadding="5" rightPadding="5">
+                    <pen lineWidth="0.0"/>
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                    <bottomPen lineWidth="0.0"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{PrintedBy}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="427" y="0" width="20" height="20" uuid="5ab2a18e-8ed9-45f8-968d-f93fc3d838e2"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[Hal]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="447" y="0" width="40" height="20" uuid="1c3ec7ac-711d-4154-9fa8-991dd7cf808e"/>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="487" y="0" width="20" height="20" uuid="8b4501f9-9e0a-4dbb-807a-d36eb404db88"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[Dari]]></text>
+            </staticText>
+            <textField evaluationTime="Report">
+                <reportElement x="507" y="0" width="65" height="20" uuid="91294077-3fc1-4913-bdba-3705fed823c7"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>

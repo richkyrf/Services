@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MasterPKS" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="29e498a1-8e09-429b-853f-f13c818735cc">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <parameter name="Title" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Laporan Permintaan Barang"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="PrintedBy" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Di Print Oleh Jack 01/01/2015 12:00"]]></defaultValueExpression>
+    </parameter>
+    <parameter name="Where" class="java.lang.String" isForPrompting="false">
+        <defaultValueExpression><![CDATA["Order by 1 DESC"]]></defaultValueExpression>
+    </parameter>
+    <queryString>
+		<![CDATA[SELECT `NoPks` as 'NO', `AliasPKS` as 'PKS', `NamaPKS` as 'Nama', `AlamatPKS`as 'Alamat' FROM `tpks` $P!{Where}]]>
+    </queryString>
+    <field name="NO" class="java.lang.Integer"/>
+    <field name="PKS" class="java.lang.String"/>
+    <field name="Nama" class="java.lang.String"/>
+    <field name="Alamat" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <pageHeader>
+        <band height="30" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="572" height="30" uuid="70994981-b090-4483-8d48-06ccbc58045f"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="0.0"/>
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                    <bottomPen lineWidth="0.0"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font fontName="Verdana" size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{Title}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="20" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="38" height="20" uuid="22007baf-d14f-4544-bf23-88e97945e8a6"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Verdana" size="10"/>
+                </textElement>
+                <text><![CDATA[NO]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="38" y="0" width="111" height="20" uuid="c91e934a-96f4-4cfa-97be-b82ee655ae40"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Verdana" size="10"/>
+                </textElement>
+                <text><![CDATA[PKS]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="149" y="0" width="181" height="20" uuid="6a269de9-561f-4b2e-a0ce-c86a484223d2"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Verdana" size="10"/>
+                </textElement>
+                <text><![CDATA[NAMA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="330" y="0" width="184" height="20" uuid="59c80343-139b-4303-abe4-09e40d76c157"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Verdana" size="10"/>
+                </textElement>
+                <text><![CDATA[ALAMAT]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <elementGroup>
+                <textField isStretchWithOverflow="true">
+                    <reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="38" height="20" isPrintWhenDetailOverflows="true" uuid="2da71582-22f7-4f15-8bb9-26b1d8111c3e"/>
+                    <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                        <pen lineWidth="1.0"/>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement verticalAlignment="Middle">
+                        <font fontName="Verdana" size="10"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement stretchType="RelativeToBandHeight" x="38" y="0" width="111" height="20" isPrintWhenDetailOverflows="true" uuid="0a04eec6-f6af-4ce5-ad81-512f570d1b07"/>
+                    <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                        <pen lineWidth="1.0"/>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement verticalAlignment="Middle">
+                        <font fontName="Verdana" size="10"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{PKS}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement stretchType="RelativeToBandHeight" x="330" y="0" width="184" height="20" isPrintWhenDetailOverflows="true" uuid="9e452bd0-b537-4796-8494-154ab9e982cb"/>
+                    <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                        <pen lineWidth="1.0"/>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement verticalAlignment="Middle">
+                        <font fontName="Verdana" size="10"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{Alamat}]]></textFieldExpression>
+                </textField>
+                <textField isStretchWithOverflow="true">
+                    <reportElement stretchType="RelativeToBandHeight" x="149" y="0" width="181" height="20" isPrintWhenDetailOverflows="true" uuid="880695ac-6b0b-4083-a624-54afce360038"/>
+                    <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                        <pen lineWidth="1.0"/>
+                        <topPen lineWidth="1.0"/>
+                        <leftPen lineWidth="1.0"/>
+                        <bottomPen lineWidth="1.0"/>
+                        <rightPen lineWidth="1.0"/>
+                    </box>
+                    <textElement verticalAlignment="Middle">
+                        <font fontName="Verdana" size="10"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{Nama}]]></textFieldExpression>
+                </textField>
+            </elementGroup>
+        </band>
+    </detail>
+    <pageFooter>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="2" y="0" width="570" height="20" uuid="01084bf6-a66e-4b47-b62e-db1839cde370"/>
+                <box leftPadding="5" bottomPadding="0" rightPadding="5">
+                    <pen lineWidth="0.0"/>
+                    <topPen lineWidth="0.0"/>
+                    <leftPen lineWidth="0.0"/>
+                    <bottomPen lineWidth="0.0"/>
+                    <rightPen lineWidth="0.0"/>
+                </box>
+                <textElement>
+                    <font fontName="Verdana" size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PrintedBy}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>
