@@ -221,7 +221,6 @@ public class Login extends javax.swing.JFrame {
         try {
             ResultSet rs;
             runSelct.setQuery("SELECT `User`, `Password`, `Level` FROM `tuser` where `user`= '" + txtNamaLogin.getText() + "'  and `password`= '" + Enc.getEncryptedPassword(new String(txtKataSandiLogin.getPassword())) + "' limit 1");
-            System.out.println();
             int no = 0;
             rs = runSelct.excute();
             if (runSelct.iskosong()) {

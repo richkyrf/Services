@@ -9,10 +9,12 @@ public class MysqlCon {
 
     private Connection Con = null;
     //String url = "jdbc:mysql://192.168.1.32:1358/";
-    String url = "jdbc:mysql://127.0.0.1:1358/";
+    String url = "jdbc:mysql://127.0.0.1/";
     String db = "dbbklacc";
-    String user = "databasedo";
-    String pass = "Win32&serVer";
+    String user = "root";
+    String pass = "";
+    //String user = "databasedo";
+    //String pass = "Win32&serVer";
 
     public String GetUrl() {
         return url;
